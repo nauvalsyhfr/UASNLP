@@ -1,19 +1,19 @@
-# 💊 MedicIR - Drug Information Retrieval System
+# MedicIR - Drug Information Retrieval System
 
 Sistem Pencarian Obat Cerdas berbasis AI menggunakan teknologi Semantic Search (MiniLM) dan TF-IDF.
 
 ![MedicIR Banner](app/static/medicir.png)
 
-## 🎯 Fitur
+## Fitur
 
-- ✅ **Pencarian Semantik**: Menggunakan MiniLM untuk memahami konteks query
-- ✅ **Pencarian Keyword**: TF-IDF untuk pencarian berbasis kata kunci  
-- ✅ **Hybrid Search**: Kombinasi terbaik dari kedua metode
-- ✅ **Web Interface**: UI modern dan user-friendly
-- ✅ **API Documentation**: Swagger UI dan ReDoc
-- ✅ **Dataset**: 3,137 obat dari sumber terpercaya
+- **Pencarian Semantik**: Menggunakan MiniLM untuk memahami konteks query
+- **Pencarian Keyword**: TF-IDF untuk pencarian berbasis kata kunci  
+- **Hybrid Search**: Kombinasi terbaik dari kedua metode
+- **Web Interface**: UI modern dan user-friendly
+- **API Documentation**: Swagger UI dan ReDoc
+- **Dataset**: 3,137 obat dari sumber terpercaya
 
-## 🖼️ Screenshots
+## Screenshots
 
 ### Landing Page
 ![Landing Page](app/static/Group_7.png)
@@ -21,7 +21,7 @@ Sistem Pencarian Obat Cerdas berbasis AI menggunakan teknologi Semantic Search (
 ### Search Interface
 Aplikasi memiliki interface pencarian yang intuitif dengan hasil yang akurat dan relevan.
 
-## 🔧 Teknologi
+## Teknologi
 
 - **Backend**: FastAPI, Python 3.10+
 - **ML Model**: sentence-transformers/all-MiniLM-L6-v2
@@ -29,7 +29,7 @@ Aplikasi memiliki interface pencarian yang intuitif dengan hasil yang akurat dan
 - **Frontend**: HTML, CSS, JavaScript
 - **Dataset**: 3,137 obat dengan informasi lengkap
 
-## 📊 Dataset
+## Dataset
 
 Dataset berisi informasi lengkap obat:
 - Nama obat
@@ -40,7 +40,7 @@ Dataset berisi informasi lengkap obat:
 
 **File**: `final_clean_data_20112024_halodoc_based.csv`
 
-## 📦 Struktur Project
+## Struktur Project
 ```
 UASNLP/
 ├── app/
@@ -65,7 +65,7 @@ UASNLP/
 └── README.md                       # This file
 ```
 
-## 🚀 Cara Install & Menjalankan
+## Cara Install & Menjalankan
 
 ### **Prasyarat**
 
@@ -119,9 +119,9 @@ python generate_tfidf.py
 ```
 
 File yang dihasilkan:
-- ✅ `doc_embeddings_minilm.npy` (~5 MB)
-- ✅ `tfidf_matrix.npz` (~3 MB)
-- ✅ `tfidf_vectorizer.joblib` (~500 KB)
+- `doc_embeddings_minilm.npy` (~5 MB)
+- `tfidf_matrix.npz` (~3 MB)
+- `tfidf_vectorizer.joblib` (~500 KB)
 
 ### **Langkah 5: Jalankan Server**
 ```bash
@@ -140,12 +140,12 @@ http://localhost:8000
 ```
 
 **Endpoints tersedia:**
-- 🌐 Web Interface: `http://localhost:8000`
-- 📚 API Docs (Swagger): `http://localhost:8000/docs`
-- 📖 API Docs (ReDoc): `http://localhost:8000/redoc`
-- ❤️ Health Check: `http://localhost:8000/health`
+- Web Interface: `http://localhost:8000`
+- API Docs (Swagger): `http://localhost:8000/docs`
+- API Docs (ReDoc): `http://localhost:8000/redoc`
+- Health Check: `http://localhost:8000/health`
 
-## 🔍 Cara Menggunakan
+## Cara Menggunakan
 
 ### **Via Web Interface**
 
@@ -180,7 +180,7 @@ curl "http://localhost:8000/search?query=obat%20diare&method=hybrid&top_k=10"
 }
 ```
 
-## 🧪 Testing
+## Testing
 
 ### **Test Search Functions**
 ```bash
@@ -202,7 +202,7 @@ for r in results:
     print(f"- {r['nama']} (score: {r['score']:.3f})")
 ```
 
-## 📖 API Documentation
+## API Documentation
 
 ### **Main Endpoints**
 
@@ -223,7 +223,7 @@ for r in results:
 - `page` (optional): Page number (default: 0)
 - `per_page` (optional): Results per page (default: 20)
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### **Error: Module not found**
 
@@ -263,7 +263,7 @@ python generate_tfidf.py
 batch_size=16  # Kurangi dari 32
 ```
 
-## 📚 Dependencies
+## Dependencies
 
 Main dependencies (lihat `requirements.txt` untuk detail):
 
@@ -275,7 +275,7 @@ Main dependencies (lihat `requirements.txt` untuk detail):
 - `pandas>=2.0.0` - Data processing
 - `numpy>=1.24.0` - Numerical computing
 
-## 🤝 Contributing
+## Contributing
 
 Kontribusi sangat diterima! Untuk berkontribusi:
 
@@ -285,23 +285,23 @@ Kontribusi sangat diterima! Untuk berkontribusi:
 4. Push ke branch (`git push origin feature/AmazingFeature`)
 5. Buat Pull Request
 
-## 📄 License
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## 👥 Tim Pengembang
+## Tim Pengembang
 
 **Kelompok B NLP SD-A1**  
 Teknologi Sains Data  
 Fakultas Teknologi Maju dan Multidisiplin  
 Universitas Airlangga
 
-## 📧 Kontak
+## Kontak
 
 - GitHub: [@nauvalsyhfr](https://github.com/nauvalsyhfr)
 - Repository: [UASNLP](https://github.com/nauvalsyhfr/UASNLP)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Dataset dari berbagai sumber medis terpercaya
 - Model: Sentence Transformers (HuggingFace)
@@ -310,6 +310,6 @@ Universitas Airlangga
 
 ---
 
-⭐ Jika project ini membantu, jangan lupa kasih Star di GitHub!
+Jika project ini membantu, jangan lupa kasih Star di GitHub!
 
-**Made with ❤️ by Kelompok B NLP SD-A1**
+**Made by Kelompok B NLP SD-A1**
