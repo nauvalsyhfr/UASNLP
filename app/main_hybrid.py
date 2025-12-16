@@ -21,6 +21,8 @@ from pydantic import BaseModel
 from typing import List, Dict, Optional
 import logging
 from contextlib import asynccontextmanager
+from fastapi.responses import FileResponse
+from pathlib import Path
 
 # Import MiniLM model loader
 try:
@@ -106,13 +108,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Mount static files
-static_dir = os.path.join(parent_dir, "static")
-if os.path.exists(static_dir):
-    app.mount("/static", StaticFiles(directory=static_dir), name="static")
-    logger.info(f"✓ Static files mounted: {static_dir}")
+# Mount static files - FIXED PATH
+from pathlib import Path
+
+# Get the correct static path
+static_dir = Path(__file__).parent / "static"  # ✅ Karena main_hybrid.py sudah di dalam app/
+
+if static_dir.exists():
+    app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
+    logger.info(f"✅ Static files mounted from: {static_dir}")
+    # List files for debugging
+    for f in static_dir.iterdir():
+        logger.info(f"   - {f.name}")
 else:
-    logger.warning(f"⚠ Static directory not found: {static_dir}")
+    logger.error(f"❌ Static directory NOT FOUND: {static_dir}")
+
+# Serve index.html at root
+@app.get("/")
+async def read_root():
+    index_path = Path(__file__).parent / "index.html"
+    return FileResponse(index_path)
 
 # ============================================================================
 # MODELS
