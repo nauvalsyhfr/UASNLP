@@ -54,7 +54,7 @@
   .landing-page{display:flex;flex-direction:column;min-height:100vh;overflow:hidden}
   .landing-header{background:linear-gradient(90deg,rgba(59,130,246,0.1),rgba(96,165,250,0.05)); padding:20px 40px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 1px 3px rgba(15,23,42,0.08); position:relative; z-index:10; backdrop-filter:blur(10px)}
   .landing-brand{display:flex;align-items:center;gap:12px;animation:slideInLeft 0.8s ease-out}
-  .landing-brand .logo{width:250px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:transform 0.3s}
+  .landing-brand .logo{width:250px;height:50px;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:transform 0.3s}
   .landing-brand .logo:hover{transform:scale(1.05)}
   .landing-brand .logo img{width:400%;height:400%;object-fit:contain;}
   .landing-nav{display:flex;gap:20px;align-items:center;color:var(--muted);font-size:14px;font-weight:500;animation:slideInRight 0.8s ease-out}
@@ -382,7 +382,7 @@
   
   .site-header{background:linear-gradient(90deg, rgba(59,130,246,0.08), rgba(96,165,250,0.04)); padding:18px 40px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 1px 0 rgba(15,23,42,0.03);}
   .brand{display:flex;align-items:center;gap:12px}
-  .logo { width:250px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:transform 0.3s}
+  .logo { width:250px;height:50px;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:transform 0.3s}
   .logo:hover{transform:scale(1.05)}
   .logo img{width:400%;height:400%;object-fit:contain;}
   .brand div:last-child{display:none}
@@ -510,7 +510,7 @@
 <div class="landing-page" id="landingPage">
   <header class="landing-header">
     <div class="landing-brand">
-      <div class="logo"><img src="app/static/medicir.png" alt="MedicIR Logo"></div>
+      <div class="logo"><img src="/static/medicir.png"></div>
     </div>
     <nav class="landing-nav">
       <div>Home</div>
@@ -548,7 +548,7 @@
       </div>
 
       <div class="landing-right">
-        <img src="static/img/Group_7.png" alt="Drug Information System Illustration">
+        <img src="/static/Group_7.png" alt="Drug Information System Illustration">
       </div>
     </div>
   </div>
@@ -608,10 +608,16 @@
 <div class="search-page" id="searchPage">
   <header class="site-header">
     <div class="brand">
-      <div class="logo"><img src="static/img/medicir.png" alt="MedicIR Logo"></div>
+      <div class="logo" style="width:250px; height:50x; display:flex; align-items:center;">
+        <img src="/static/medicir.png" 
+             alt="MedicIR Logo"
+             style="max-width:400%; max-height:400%; width:auto; height:auto; object-fit:contain;">
+      </div>
     </div>
-    <nav class="nav">
-      <div id="backToHome">Home</div>
+    <nav class="nav" style="display:flex; gap:18px; align-items:center; color:#6b7280; cursor:pointer;">
+      <div id="backToHome" style="padding:8px 16px; border-radius:8px; transition:all 0.3s; font-weight:500; cursor:pointer;">
+        Home
+      </div>
     </nav>
   </header>
 
@@ -651,7 +657,7 @@
     </div>
 
     <div class="hero-right">
-      <img class="hero-img" src="static/img/370.jpg" alt="Medicine illustration">
+      <img class="hero-img" src="static/370.jpg" alt="Medicine illustration">
       <p style="margin-top:12px;color:var(--muted);font-size:13px">Cari informasi obat yang kamu butuhkan. Contoh: "obat sakit kepala paracetamol" atau "obat untuk diare anak".</p>
     </div>
   </section>
@@ -856,7 +862,7 @@
       const total = j.total_results || j.results.length;
       const start = currentPage * perPage + 1;
       const end = start + j.results.length - 1;
-      resultCount.textContent = 'Menampilkan ' + start + '-' + end + ' dari ' + total + ' hasil (' + j.method_used + ')';
+      resultCount.textContent = 'Menampilkan ' + start + '-' + end + ' dari ' + total + ' hasil';
       nextBtn.disabled = !j.has_more;
 
       window.scrollTo({top: document.querySelector('.hero').offsetTop, behavior:'smooth'});
