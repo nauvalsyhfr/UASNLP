@@ -1,8 +1,7 @@
-# 🚀 Quick Setup Guide
+## Quick Setup Guide
 
 Panduan singkat untuk menjalankan MedicIR di laptop baru.
 
-## ⚡ Quick Start (5 Menit)
 ```bash
 # 1. Clone
 git clone https://github.com/nauvalsyhfr/UASNLP.git
@@ -23,7 +22,7 @@ python -m uvicorn app.main_hybrid:app --reload --port 8000
 # http://localhost:8000
 ```
 
-## ✅ Checklist
+## Checklist
 
 - [ ] Python 3.10+ installed
 - [ ] Git installed
@@ -31,7 +30,7 @@ python -m uvicorn app.main_hybrid:app --reload --port 8000
 - [ ] 2GB disk space
 - [ ] Internet connection (first run)
 
-## 🐛 Common Issues
+## Common Issues
 
 **Import Error?**
 ```bash
@@ -49,7 +48,5 @@ python -m uvicorn app.main_hybrid:app --port 8001
 python generate_embeddings.py
 python generate_tfidf.py
 ```
-
-## 📞 Need Help?
 
 Check `README.md` for detailed documentation.
